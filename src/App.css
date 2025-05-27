@@ -1,38 +1,153 @@
-.App {
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.app.light {
+  background: linear-gradient(to right top, #a8edea, #fed6e3);
+  color: #333;
+}
+
+.app.dark {
+  background: linear-gradient(to right top, #232526, #414345);
+  color: #f5f5f5;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.card input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+}
+
+.card button {
+  padding: 10px 20px;
+  margin: 5px 5px 15px 0;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #5b9bd5;
+  color: white;
+  transition: background 0.3s;
+}
+
+.card button:hover {
+  background-color: #407fc7;
+}
+
+.error {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.recent {
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.recent button {
+  background-color: #888;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.toggles button {
+  background: transparent;
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
+
+.result {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.temp {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.condition {
+  font-style: italic;
+  margin-bottom: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.forecast {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 15px;
+  margin-top: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.forecast-day {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 10px;
+  width: 100px;
+  color: inherit;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.forecast-day img {
+  width: 48px;
+  height: 48px;
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 480px) {
+  .card {
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .forecast-day {
+    width: 45%;
+  }
+
+  .toggles button {
+    font-size: 1.2rem;
+    margin-left: 5px;
+  }
+
+  .temp {
+    font-size: 2rem;
+  }
+
+  .card input,
+  .card button {
+    font-size: 1rem;
   }
 }
